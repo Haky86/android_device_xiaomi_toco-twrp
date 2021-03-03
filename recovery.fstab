@@ -1,12 +1,8 @@
 # mount point       fstype    device                                                                flags
-/system             ext4      system                                                                flags=display="System";backup=1;logical;
-/system_image       emmc      system                                                                flags=display="System image";backup=1;flashimg=1;logical;
-/vendor             ext4      vendor                                                                flags=display="Vendor";backup=1;logical;
-/vendor_image       emmc      vendor                                                                flags=display="Vendor image";backup=1;flashimg=1;logical;
-/product            ext4      product                                                               flags=display="Product";backup=1;logical;
-/product_image      emmc      product                                                               flags=display="Product image";backup=1;flashimg=1;logical;
-/odm                ext4      odm                                                                   flags=display="Odm";backup=1;logical;
-/odm_image          emmc      odm                                                                   flags=display="Odm image";backup=1;flashimg=1;logical;
+system                                                  /system                ext4    ro,barrier=1,discard                                 wait,avb=vbmeta_system,logical,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey
+product                                                 /product               ext4    ro,barrier=1,discard                                 wait,avb=vbmeta_system,logical,first_stage_mount
+vendor                                                  /vendor                ext4    ro,barrier=1,discard                                 wait,avb,logical,first_stage_mount
+odm                                                     /odm                   ext4    ro,barrier=1,discard                                 wait,avb,logical,first_stage_mount
 /cust               ext4      /dev/block/bootdevice/by-name/cust                                    flags=display="Cust";
 /cust_image         emmc      /dev/block/bootdevice/by-name/cust                                    flags=display="Cust image";backup=1;flashimg=1;
 /cache              ext4      /dev/block/bootdevice/by-name/cache                                   flags=display="Cache";

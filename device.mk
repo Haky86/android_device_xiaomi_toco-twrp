@@ -18,3 +18,5 @@
 
 LOCAL_PATH := device/xiaomi/toco
 
+# Dynamic Partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
