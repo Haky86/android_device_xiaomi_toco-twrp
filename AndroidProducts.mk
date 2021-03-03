@@ -18,3 +18,8 @@
 
 PRODUCT_MAKEFILES := \
      $(LOCAL_DIR)/omni_toco.mk
+     
+COMMON_LUNCH_CHOICES := \
+    omni_toco-user \
+    omni_toco-userdebug \
+    omni_toco-eng
